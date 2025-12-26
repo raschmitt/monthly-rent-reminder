@@ -20,7 +20,7 @@ It is designed to:
 2. GitHub Actions:
 
    * Runs the script automatically
-   * Executes **every 10th day of the month**
+   * Executes **on the first day of every month**
    * Uses GitHub **Secrets** for sensitive data
    * Uses GitHub **Variables** for non-sensitive configuration
 
