@@ -1,0 +1,35 @@
+name: Send monthly email
+
+on:
+  schedule:
+    # Runs at 10:00 UTC on day 10 of every month
+    - cron: "0 10 10 * *"
+
+  workflow_dispatch:
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Send email
+        run: |
+          python send_email.py \
+            --smtp-server smtp.gmail.com \
+            --smtp-port 587 \
+            --email-address "${{ vars.EMAIL_ADDRESS }}" \
+            --email-password "${{ secrets.EMAIL_PASSWORD }}"
+
