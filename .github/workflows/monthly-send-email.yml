@@ -30,8 +30,8 @@ jobs:
       - name: Send email
         run: |
           python send_email.py \
-            --smtp-server smtp.gmail.com \
-            --smtp-port 587 \
+            --smtp-server "${{ vars.SMTP_SERVER }}" \
+            --smtp-port "${{ vars.SMTP_PORT }}" \
             --email-address "${{ vars.EMAIL_ADDRESS }}" \
             --email-password "${{ secrets.EMAIL_PASSWORD }}"
 
