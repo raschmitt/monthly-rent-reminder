@@ -1,4 +1,4 @@
-# 📧 Simple Email Sender (Python + GitHub Actions)
+# 📧 Monthly Email Sender
 
 This project is a **simple, configurable Python script** that sends emails using SMTP.
 It is designed to:
