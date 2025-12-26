@@ -33,8 +33,8 @@ def main():
     parser.add_argument("--smtp-port", type=int, required=True)
     parser.add_argument("--email-address", required=True)
     parser.add_argument("--email-password", required=True)
-    parser.add_argument("--message-file", default="message.yml", required=True)
-    parser.add_argument("--recipients-file", default="recipients.yml", required=True)
+    parser.add_argument("--message-file", default="message.yml")
+    parser.add_argument("--recipients-file", default="recipients.yml")
 
     args = parser.parse_args()
 
